@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DMSans-VariableFont.ttf");
+}
+
+:root {
+  --color-red: #ec775f;
+  --color-cyan: #76b5bc;
+
+  --dark-brown: #382314;
+  --medium-brown: #93867b;
+  --cream: #f8e9dd;
+  --pale-orange: #fffaf5;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans";
+  background-color: #f7e9dc;
+  margin: 0 1rem;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+h1 {
+  color: var(--dark-brown);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.body {
+  background-color: var(--pale-orange);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.container .head {
+  background-color: var(--color-red);
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .head div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.container .head div span {
+  color: var(--pale-orange);
+}
+
+.container .head div span:first-child {
+  font-size: 1.125rem;
+}
+
+.container .head div span:last-child {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#graph-container {
+  display: flex;
+  align-items: flex-end;
+  height: 250px;
+  gap: 1rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--cream);
+  margin-bottom: 2rem;
+}
+
+.bar {
+  position: relative;
+  background-color: var(--color-red);
+  flex: 1;
+  height: var(--i);
+  border-radius: 0.25rem;
+}
+
+.bar.blue {
+  background-color: var(--color-cyan);
+}
+
+.day {
+  position: absolute;
+  color: var(--medium-brown);
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.overview {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.text {
+  color: var(--medium-brown);
+  font-size: 1.125rem;
+}
+
+.text.bold {
+  color: var(--dark-brown);
+  font-weight: 700;
+}
+
+.text.large {
+  list-style: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-brown);
+}
+
+.text.right {
+  text-align: right;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.125rem;
+  }
+  .text {
+    font-size: 0.875rem;
+  }
+  .text.large {
+    font-size: 2rem;
+  }
+  .day {
+    font-size: 0.875rem;
+  }
+  .container .head div span:first-child {
+    font-size: 1rem;
+  }
+  
+  .container .head div span:last-child {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  #graph-container {
+    gap: 0.75rem;
+  }
+}
